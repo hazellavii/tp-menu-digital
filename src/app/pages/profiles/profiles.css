@@ -1,0 +1,19 @@
+.page {
+    background-color: var(--color-white);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+    max-width: 900px;
+    margin: 40px auto;
+  }
+  
+  h1 {
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+  }
+  
+  p {
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+  

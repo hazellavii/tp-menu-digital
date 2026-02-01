@@ -1,19 +1,27 @@
 import { Routes } from '@angular/router';
 
-import { Home} from './pages/home/home';
-import { RestaurantMenu } from './pages/restaurant-menu/restaurant-menu';
-import { ProductDetail } from './pages/product-detail/product-detail';
-import { Login } from './pages/login/login';
-import { Register } from './pages/register/register';
-import { DashboardOwner } from './pages/dashboard-owner/dashboard-owner';
+import { LoginPage } from './pages/login/login';
+import { RegisterPage } from './pages/register/register';
+import { CategoryPage } from './pages/category/category';
+import { Restaurant } from './pages/restuarant/restuarant';
+import { SeeRestuarant } from './pages/see-restuarant/see-restuarant';
+import { ProductDetailPage } from './pages/product-detail/product-detail';
+import { ProfilesPage } from './pages/profiles/profiles';
+
+import { guestUserGuard } from './guards/guestusers';
+import { loggedUserGuard } from './guards/loggedusers';
 
 export const routes: Routes = [
-  { path: '', component: Home },
-  { path: 'restaurant/:id', component: RestaurantMenu },
-  { path: 'product/:id', component: ProductDetail },
-  { path: 'login', component: Login },
-  { path: 'register', component: Register },
-  { path: 'dashboard', component: DashboardOwner},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+  { path: 'login', component: LoginPage, canActivate: [guestUserGuard] },
+  { path: 'register', component: RegisterPage, canActivate: [guestUserGuard] },
+
+  { path: 'categories', component: CategoryPage, canActivate: [loggedUserGuard] },
+  { path: 'restaurants/:id', component: Restaurant, canActivate: [loggedUserGuard] },
+  { path: 'restaurant/:id', component: SeeRestuarant, canActivate: [loggedUserGuard] },
+  { path: 'product/:id', component: ProductDetailPage, canActivate: [loggedUserGuard] },
+  { path: 'profile', component: ProfilesPage, canActivate: [loggedUserGuard] },
+
+  { path: '**', redirectTo: 'login' }
 ];
-
-

@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+   :root {
+    --color-bg: #F6F3EE;
+    --color-white: #FFFFFF;
+    --color-primary: #A58AD8;
+    --color-secondary: #5E6C84;
+    --color-gray: #E6E8EC;
+    --color-text: #2E2E2E;
+  }
+  
+  .page {
+    padding: 24px;
+  }
+  
+  h2 {
+    color: #5e6c84;
+    margin-bottom: 16px;
+  }
+  
+  .card {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    border: 1px solid #e6e8ec;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+  }
+  
+  button {
+    background: #a58ad8;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 999px;
+  }
+  

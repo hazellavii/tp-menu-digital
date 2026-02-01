@@ -1,1 +1,5 @@
-<p>product-detail works!</p>
+<div class="page" *ngIf="product">
+    <h2>{{ product.name }}</h2>
+    <p>Precio: ${{ product.price }}</p>
+  </div>
+  

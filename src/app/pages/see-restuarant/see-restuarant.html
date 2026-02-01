@@ -1,0 +1,11 @@
+<div class="page">
+    <h2>Menú</h2>
+  
+    <div class="card"
+         *ngFor="let p of products"
+         [routerLink]="['/product', p.id]">
+      {{ p.name }} – ${{ p.price }}
+    </div>
+  </div>
+  
+  

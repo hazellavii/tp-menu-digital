@@ -1,11 +1,24 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './login.html',
-  styleUrl: './login.css',
+  styleUrls: ['./login.css']
 })
-export class Login {
+export class LoginPage {
+  email = '';
+  password = '';
 
+  constructor(private router: Router) {}
+
+  login() {
+    localStorage.setItem('token', 'fake-token');
+    this.router.navigate(['/categories']);
+  }
 }
+
