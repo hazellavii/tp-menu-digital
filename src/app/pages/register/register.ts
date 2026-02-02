@@ -1,24 +1,25 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
   templateUrl: './register.html',
   styleUrls: ['./register.css']
 })
 export class RegisterPage {
-  name = '';
-  email = '';
-  password = '';
 
   constructor(private router: Router) {}
 
+  goHome() {
+    this.router.navigate(['/']);
+  }
+
   register() {
-    this.router.navigate(['/login']);
+    // simulamos registro
+    localStorage.setItem('token', 'ok');
+    this.router.navigate(['/categories']);
   }
 }
+
+
 

@@ -1,10 +1,7 @@
-<div class="page">
-    <h2>Categorías</h2>
-  
-    <div class="card"
-         *ngFor="let c of categories"
-         [routerLink]="['/restaurants', c.id]">
-      {{ c.name }}
-    </div>
-  </div>
-  
+<button routerLink="/home">Volver</button>
+
+<h2>Restaurantes</h2>
+
+<div class="list">
+  <!-- acá va tu ngFor de categorías -->
+</div>

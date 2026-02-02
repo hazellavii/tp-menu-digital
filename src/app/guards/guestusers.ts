@@ -1,15 +1,6 @@
-import { CanActivateFn, Router } from '@angular/router';
-import { inject } from '@angular/core';
+import { CanActivateFn } from '@angular/router';
 
 export const guestUserGuard: CanActivateFn = () => {
-  const router = inject(Router);
-
   const token = localStorage.getItem('token');
-
-  if (token) {
-    router.navigate(['/categories']);
-    return false;
-  }
-
-  return true;
+  return !token;
 };

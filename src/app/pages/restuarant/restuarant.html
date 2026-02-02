@@ -1,10 +1,23 @@
-<div class="page">
-    <h2>Productos</h2>
+<div class="restaurants-page">
+
+    <button class="back-btn" (click)="goHome()">
+      ← Back to Home
+    </button>
   
-    <div class="card"
-         *ngFor="let p of products"
-         [routerLink]="['/product', p.id]">
-      {{ p.name }} – ${{ p.price }}
+    <h1 class="title">Restaurantes</h1>
+  
+    <div class="grid">
+      <div class="card" *ngFor="let r of restaurants">
+        <h2>{{ r.name }}</h2>
+  
+        <p><strong>Dirección:</strong> {{ r.address }}</p>
+        <p><strong>Teléfono:</strong> {{ r.phone }}</p>
+  
+        <button class="menu-btn" (click)="goToRestaurant(r.id)">
+          See Menú
+        </button>
+      </div>
     </div>
+  
   </div>
   

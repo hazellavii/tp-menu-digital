@@ -3,7 +3,6 @@ import { inject } from '@angular/core';
 
 export const loggedUserGuard: CanActivateFn = () => {
   const router = inject(Router);
-
   const token = localStorage.getItem('token');
 
   if (!token) {

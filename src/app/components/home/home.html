@@ -1,16 +1,16 @@
-<div class="home">
-
-    <h2 class="title">Categorías</h2>
+<div class="home-container">
+    <h1 class="title">Menu Digital</h1>
   
-    <div class="categories">
-      <div class="card" routerLink="/categories">
-        <p>Ver categorías</p>
-      </div>
+    <button class="btn primary" (click)="goToLogin()">
+      Iniciar sesión
+    </button>
   
-      <div class="card" routerLink="/profile">
-        <p>Mi perfil</p>
-      </div>
-    </div>
+    <button class="btn secondary" (click)="goToRestaurants()">
+      Restaurantes
+    </button>
   
+    <button class="btn outline" (click)="goToRegister()">
+      Registrarse
+    </button>
   </div>
   

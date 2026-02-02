@@ -5,6 +5,7 @@ import { Auth } from '../interface/auth';
   providedIn: 'root'
 })
 export class AuthService {
+  token: any;
 
   login(data: Auth): boolean {
     if (data.email && data.password) {
@@ -23,4 +24,6 @@ export class AuthService {
   }
 }
 
+
+export type { Auth };
 

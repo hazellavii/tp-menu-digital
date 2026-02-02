@@ -1,34 +1,20 @@
-.home {
-    padding: 20px;
-  }
-  
-  .title {
-    margin-bottom: 16px;
-    color: #5e6c84; 
-    font-weight: 600;
-  }
-  
-  .categories {
+.home-container {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #cecbc5;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
   }
   
-  .card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid #e6e8ec;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.05);
-    transition: all 0.2s ease;
+  button {
+    width: 260px;
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 14px;
+    border: none;
+    background-color: #a28ecd;
   }
-  
-  .card:hover {
-    background: #f6f3ee;      
-    border-color: #a58ad8;    
-  }
-  
-  
   

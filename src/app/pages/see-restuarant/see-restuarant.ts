@@ -1,19 +1,32 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-see-restaurant',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
   templateUrl: './see-restuarant.html',
   styleUrls: ['./see-restuarant.css']
 })
-export class SeeRestuarant {
-  products = [
-    { id: 1, name: 'Ravioles', price: 3200 },
-    { id: 2, name: 'Cheesecake', price: 2500 }
-  ];
+export class SeeRestuarant implements OnInit {
 
-  constructor(private route: ActivatedRoute) {}
+  isLoading = true;
+  restaurant: any = null;
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+
+    setTimeout(() => {
+      this.restaurant = {
+        name: 'hhhhhhh',
+        phone: '3416997685',
+        address: 'Güemes 2066'
+      };
+      this.isLoading = false;
+    }, 1500);
+  }
+
+  volver() {
+    this.router.navigate(['/restaurants']);
+  }
 }
+

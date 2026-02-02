@@ -1,10 +1,23 @@
-<div class="page">
-    <h2>Crear cuenta</h2>
+<div class="auth-container">
+    <div class="auth-card">
+      <h2>Registrarse</h2>
   
-    <input placeholder="Nombre" [(ngModel)]="name">
-    <input placeholder="Email" [(ngModel)]="email">
-    <input type="password" placeholder="Contraseña" [(ngModel)]="password">
+      <form>
+        <input placeholder="Nombre del Dueño" required>
+      <input placeholder="Nombre del Restaurante" required>
+      <input type="address" placeholder="Direcion" required>
+      <input type="number" placeholder="Phone Number" required>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Contraseña">
   
-    <button (click)="register()">Registrarme</button>
+        <button class="btn primary">Crear cuenta</button>
+      </form>
+  
+      <button type="button" class="btn outline" (click)="goHome()">
+        Home
+      </button>
+        </div>
   </div>
   
+
+

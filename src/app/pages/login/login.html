@@ -1,18 +1,18 @@
-<div class="login-container">
-    <div class="login-content">
+<div class="auth-container">
+    <div class="auth-card">
+      <h2>Iniciar sesión</h2>
   
-      <button class="action-btn" routerLink="/login">
-        Iniciar Sesión
+      <form (ngSubmit)="login()">
+        <input type="text" placeholder="Nombre del restaurante" required>
+        <input type="password" placeholder="Contraseña" required>
+  
+        <button type="submit" class="btn primary">Ingresar</button>
+      </form>
+  
+      <button type="button" class="btn outline" (click)="goHome()">
+        Home
       </button>
-  
-      <button class="action-btn" routerLink="/restaurants">
-        Ver restaurantes
-      </button>
-  
-      <button class="action-btn" routerLink="/register">
-        Registrarse
-      </button>
-  
-    </div>
+        </div>
   </div>
+  
   

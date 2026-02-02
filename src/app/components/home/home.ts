@@ -1,12 +1,26 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
-export class Home {}
+export class HomePage {
+
+  constructor(private router: Router) {}
+
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
+
+  goToRestaurants() {
+    console.log('voy a restaurantes');
+    this.router.navigate(['/restaurants']);
+  }
+
+  goToRegister() {
+    this.router.navigate(['/register']);
+  }
+}
+
