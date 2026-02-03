@@ -2,22 +2,23 @@
     <div class="auth-card">
       <h2>Registrarse</h2>
   
-      <form>
+      <form (ngSubmit)="register()">
         <input placeholder="Nombre del Dueño" required>
-      <input placeholder="Nombre del Restaurante" required>
-      <input type="address" placeholder="Direcion" required>
-      <input type="number" placeholder="Phone Number" required>
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Contraseña">
+        <input placeholder="Nombre del Restaurante" required>
+        <input type="text" placeholder="Dirección" required>
+        <input type="number" placeholder="Phone Number" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Contraseña" required>
   
-        <button class="btn primary">Crear cuenta</button>
+        <button type="submit" class="btn primary">
+          Crear cuenta
+        </button>
       </form>
   
       <button type="button" class="btn outline" (click)="goHome()">
         Home
       </button>
-        </div>
+    </div>
   </div>
   
-
-
+  

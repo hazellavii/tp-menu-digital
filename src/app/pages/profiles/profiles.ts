@@ -1,28 +1,47 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../../services/user-service';
-import { User } from '../../interface/user';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'app-profiles',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './profiles.html',
   styleUrls: ['./profiles.css']
 })
-export class ProfilesPage {
-  user: User;
+export class ProfilesPage implements OnInit {
 
-  constructor(
-    private userService: UserService,
-    private router: Router
-  ) {
-    this.user = this.userService.getUser();
+  restaurant: any;
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    const data = localStorage.getItem('restaurant');
+    if (data) {
+      this.restaurant = JSON.parse(data);
+    }
+  }
+
+  goToCategories() {
+    this.router.navigate(['/categories']);
+  }
+
+  goToProducts() {
+    this.router.navigate(['/product', 1]);
+  }
+
+  goToMyMenu() {
+    if (this.restaurant?.id) {
+      this.router.navigate(['/restaurant', this.restaurant.id]);
+    }
+  }
+
+  goHome() {
+    this.router.navigate(['/']);
   }
 
   logout() {
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 }

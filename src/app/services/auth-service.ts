@@ -1,29 +1,52 @@
 import { Injectable } from '@angular/core';
-import { Auth } from '../interface/auth';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  token: any;
 
-  login(data: Auth): boolean {
-    if (data.email && data.password) {
-      localStorage.setItem('token', 'fake-token');
-      return true;
-    }
-    return false;
+  constructor(private router: Router) {}
+
+  login(email: string, password: string) {
+    // simulamos login (como Del Zotto)
+    const user = {
+      email,
+      restaurantName: 'Mi Restaurante',
+      phone: '3416997685',
+      address: 'Lapida 2244'
+    };
+
+    localStorage.setItem('token', 'fake-token');
+    localStorage.setItem('user', JSON.stringify(user));
+
+    this.router.navigate(['/profile']);
   }
 
-  logout(): void {
-    localStorage.removeItem('token');
+  register(data: any) {
+    // guarda restaurante
+    localStorage.setItem('restaurant', JSON.stringify(data));
+
+    // después de registrarse → login
+    this.router.navigate(['/login']);
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 
   isLogged(): boolean {
     return !!localStorage.getItem('token');
   }
+
+  getUser() {
+    const u = localStorage.getItem('user');
+    return u ? JSON.parse(u) : null;
+  }
 }
 
 
-export type { Auth };
+
+
 

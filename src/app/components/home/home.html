@@ -1,16 +1,19 @@
 <div class="home-container">
     <h1 class="title">Menu Digital</h1>
-  
-    <button class="btn primary" (click)="goToLogin()">
+
+
+    <button *ngIf="!isLogged" (click)="goToLogin()">
       Iniciar sesión
     </button>
+
+    <button (click)="goToRestaurants()">
+        Restaurantes
+      </button>
   
-    <button class="btn secondary" (click)="goToRestaurants()">
-      Restaurantes
-    </button>
-  
-    <button class="btn outline" (click)="goToRegister()">
+    <button *ngIf="!isLogged" (click)="goToRegister()">
       Registrarse
     </button>
+
+  
   </div>
   

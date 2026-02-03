@@ -1,19 +1,132 @@
-.page {
-    background-color: var(--color-white);
-    padding: 32px;
+.profile-page {
+    min-height: 100vh;
+    background: #cecbc5;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: system-ui, sans-serif;
+  }
+  
+  /* CARD RESTAURANTE */
+  .restaurant-card {
+    background: white;
     border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.07);
-    max-width: 900px;
-    margin: 40px auto;
+    padding: 1.8rem;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
   }
   
-  h1 {
-    color: var(--color-secondary);
-    margin-bottom: 20px;
+  .restaurant-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
-  p {
-    color: var(--color-text);
-    line-height: 1.6;
+  .restaurant-header h1 {
+    color: #8b5cf6;
+    margin: 0;
+    font-size: 1.8rem;
   }
+  
+  .header-actions {
+    display: flex;
+    gap: 0.6rem;
+  }
+  
+  .icon-btn {
+    background: #ede9fe;
+    border: none;
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .icon-btn.danger {
+    background: #fee2e2;
+  }
+  
+  /* INFO GRID */
+  .restaurant-info-grid {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .restaurant-info-grid span {
+    font-size: 12px;
+    color: #6b7280;
+  }
+  
+  .restaurant-info-grid p {
+    margin: 0.3rem 0 0;
+    font-weight: 600;
+    color: #374151;
+  }
+  
+  /* SECCIONES */
+  .section,
+  .big-section {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  }
+  
+  .big-section {
+    border-left: 6px solid #8b5cf6; /* 👈 identidad propia */
+    min-height: 240px;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .section-header h2 {
+    margin: 0;
+    color: #374151;
+  }
+  
+  .primary-btn {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .empty-text {
+    margin-top: 2rem;
+    text-align: center;
+    color: #6b7280;
+    font-style: italic;
+  }
+  
+  /* FOOTER */
+  .footer-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .outline-btn {
+    background: transparent;
+    border: 2px solid #8b5cf6;
+    color: #8b5cf6;
+    padding: 0.7rem 1.3rem;
+    border-radius: 12px;
+  }
+  
+  .logout-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.3rem;
+    border-radius: 12px;
+  }
+  
   

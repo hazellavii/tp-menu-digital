@@ -1,10 +1,58 @@
-<button routerLink="/home">Home</button>
+<div class="profile-page">
 
-
-<div class="page">
-    <h2>{{ user.name }}</h2>
-    <p>{{ user.email }}</p>
+    <!-- INFO RESTAURANTE -->
+    <section class="restaurant-card">
+      <div class="restaurant-header">
+        <h1>{{ restaurant?.name }}</h1>
   
-    <button (click)="logout()">Cerrar sesión</button>
+        <div class="header-actions">
+          <button class="icon-btn">✏️</button>
+          <button class="icon-btn danger">🗑</button>
+        </div>
+      </div>
+  
+      <div class="restaurant-info-grid">
+        <div>
+          <span>Dueño</span>
+          <p>{{ restaurant?.owner }}</p>
+        </div>
+  
+        <div>
+          <span>Dirección</span>
+          <p>{{ restaurant?.address }}</p>
+        </div>
+  
+        <div>
+          <span>Teléfono</span>
+          <p>{{ restaurant?.phone }}</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- CATEGORÍAS -->
+    <section class="big-section">
+      <div class="section-header">
+        <h2>Categorías</h2>
+        <button class="primary-btn">＋ Nueva Categoría</button>
+      </div>
+  
+      <p class="empty-text">Todavía no creaste categorías.</p>
+    </section>
+  
+    <!-- PRODUCTOS -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Productos</h2>
+        <button class="primary-btn">＋ Nuevo Producto</button>
+      </div>
+  
+      <p class="empty-text">Aún no hay productos cargados.</p>
+    </section>
+  
+    <div class="footer-actions">
+      <button class="outline-btn" (click)="goHome()">⬅ Volver</button>
+      <button class="logout-btn" (click)="logout()">Cerrar sesión</button>
+    </div>
+  
   </div>
   
