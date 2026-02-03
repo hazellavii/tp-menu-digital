@@ -1,16 +1,20 @@
 <div class="menu-container">
 
-    <div *ngIf="isLoading" class="loading-state">
-      <div class="spinner"></div>
-      <p>Cargando menú...</p>
-    </div>
+    @if (isLoading) {
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Cargando menú...</p>
+      </div>
+    }
   
-    <div *ngIf="!isLoading && !restaurant" class="error-state">
-      <p>No se encontró el restaurante</p>
-      <button (click)="volver()">Volver</button>
-    </div>
+    @if (!isLoading && !restaurant) {
+      <div class="error-state">
+        <p>No se encontró el restaurante</p>
+        <button (click)="volver()">Volver</button>
+      </div>
+    }
   
-    <div *ngIf="!isLoading && restaurant">
+    @if (!isLoading && restaurant) {
   
       <header class="restaurant-header">
         <h1>{{ restaurant.name }}</h1>
@@ -28,7 +32,7 @@
         ⬅ Volver a Restaurantes
       </button>
   
-    </div>
+    }
   
   </div>
   
